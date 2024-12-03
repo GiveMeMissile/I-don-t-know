@@ -9,20 +9,24 @@ class Why:
         self.happy = happy
         self.name = name
         
-    def computer_scientist(x):
+    def __str__(self):
+        return f"This human's name is {self.name}."
+        
+    def computer_scientist(self):
         if(not self.good_at_math):
             return False
-        if(self.salary >= 50000):
+        if(self.salary <= 50000):
             return False
         if(30 < self.sanity):
             return False
-        if(not self.happy):
+        if(self.happy):
             return False
         if(self.GPA < 3.5):
             return False
         return True
+        
 
 
 Bobby = Why(sanity = 20, GPA = 4, good_at_math = True, salary = 120000, good_at_science = True, good_at_reading = False, happy = False, name = "Bobby")
-x = Bobby.computer_scientist()
-print(x)
+print(Bobby.computer_scientist())
+print(Bobby)
